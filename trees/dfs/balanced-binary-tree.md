@@ -41,7 +41,7 @@ return 1 + Math.max(height(root.left), height(root.right));
 class Solution {
     public int height(TreeNode root) {
         if (root == null) {
-            return -1;
+            return -1; // null node doesnt count as level. subtract from height
         }
         
         return 1 + Math.max(height(root.left), height(root.right)); 

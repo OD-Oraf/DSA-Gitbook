@@ -1,3 +1,7 @@
+---
+description: https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+---
+
 # Flatten Binary Tree to Linked List
 
 ## Strategy(DFS)
@@ -12,10 +16,18 @@
 
 Images (One cycle)
 
-* ![](<../../.gitbook/assets/image (2).png>)
-* ![](../../.gitbook/assets/image.png)
-* ![](<../../.gitbook/assets/image (1).png>)
-* ![](<../../.gitbook/assets/image (3).png>)
+*
+
+    <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+*
+
+    <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+*
+
+    <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+*
+
+    <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ```java
 class FlattenTree {

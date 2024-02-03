@@ -1,28 +1,34 @@
 # Boats to Save people
 
+## Strategy - Two Pointer
+
+* Its important to node that the largest weight will never exceed limit
+* If we sort and use two pointers, we can use sum of smallest and largest and count boats that way
+
 ```java
 class Solution {
     public int numRescueBoats(int[] people, int limit) {
-        
+        // two pointer going inwards
         Arrays.sort(people);
         
-        int heavyIndx = people.length - 1;
-        int lightIndx = 0;
-        int minBoats = 0;
+        int left = 0;
+        int right = people.length - 1;
+        int res = 0;
         
-        while (lightIndx <= heavyIndx) {
-            if (people[heavyIndx] + people[lightIndx] <= limit) {
-                heavyIndx--;
-                lightIndx++;
-                minBoats++;
+        while (left <= right) {
+            
+            if (people[right] + people[left] > limit) {// can only use right
+                right--;
+                res++;
             } else {
-                heavyIndx--;
-                minBoats++;
+                right--;
+                left++;
+                res++;
             }
+            
         }
         
-        return minBoats;
-        
+        return res;
     }
 }
 ```

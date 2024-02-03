@@ -50,6 +50,7 @@ class Solution {
         queue.offer(root); 
         
         while(!queue.isEmpty()) {
+             // this will always be childern of previous iterations nodes
             int levelSize = queue.size();
             List<Integer> currentLevel = new ArrayList<>(levelSize);
             

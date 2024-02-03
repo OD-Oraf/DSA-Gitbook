@@ -5,28 +5,29 @@ Use two pointer strategy
 ```java
 class Solution {
     public int maxArea(int[] height) {
-        // Use 2 pointers
-        // Use min of both heights and calulate areas to find max
+        // Find max area of water
+        // H can only be at most the height of the shorter side
         
-        
-        
+        int maxArea = 0;
         int left = 0;
         int right = height.length - 1;
-        int maxVol = 0;
-        
+    
         while (left < right) {
             int h = Math.min(height[left], height[right]);
-            int l = right - left;
-            maxVol = Math.max(maxVol, h * l);
+            int w = right - left;
+            int area = w * h;
             
-            if (height[left] < height[right]) {
+            maxArea = Math.max(maxArea, area);
+            
+            if (height[left] <= height[right]) {
                 left++;
             } else {
                 right--;
             }
         }
         
-        return maxVol; 
+        return maxArea;
+        
     }
 }
 ```

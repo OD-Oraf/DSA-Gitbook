@@ -1,6 +1,6 @@
 # Path Sum
 
-## Strategy(DFS)
+## Strategy - DFS
 
 * Use DFS and at each node subtract node value from sum.&#x20;
 * When you reach leafnode, check if it is equal to the sum
@@ -26,13 +26,15 @@ class Solution {
         // End of path denoted by leaf node and node value is equal to sum
         
         if (root == null) {
-            return false;
+            return false; // dont need answer for subproblem
         }
         
-        if (root.left == null && root.right == null && targetSum == root.val) {
+        // This codition confims node is leaf and path sum == target
+        if (root.left == null && root.right == null && targetSum == root.val) { 
             return true;
         }
         
+        // recursivly pass in left/right nodes to get sum of total path
         return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
         
     }

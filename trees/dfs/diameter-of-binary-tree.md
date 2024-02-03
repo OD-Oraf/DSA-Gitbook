@@ -23,22 +23,65 @@
  * }
  */
 class Solution {
-    public int diameter;
-    public int height(TreeNode root) {
+    int diameter;
+    public int diameterOfBinaryTree(TreeNode root) {
+        diameter = 0;
+        findDiameter(root);
+        return diameter;
+        
+    }
+    
+    public int findDiameter(TreeNode root) {
         if (root == null) {
             return 0;
         }
         
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-        diameter = Math.max(diameter, leftHeight + rightHeight);
+        int leftPath = findDiameter(root.left);
+        int rightPath = findDiameter(root.right);
         
-        return 1 + Math.max(leftHeight, rightHeight);
-    }
-    public int diameterOfBinaryTree(TreeNode root) {
-        diameter = 0;
-        height(root);
-        return diameter;
+        diameter = Math.max(diameter, leftPath + rightPath);
+        
+            
+        return 1 + Math.max(leftPath, rightPath);
     }
 }
 ```
+
+```java
+// Some code 
+// find diameter is just finding the longest path of the subtree starting at root
+
+   1
+  / \
+ 2   3
+/  \
+4   5
+
+findDiameter(1)
+   findDiameter(2) - //leftPath = 2
+      findDiameter(4)
+         findDiameter(null)//left
+         findDiameter(null)//right
+            return 1 + Math.max(0,0)
+            diameter = 0
+      findDiameter(5)
+         findDiameter(null)//left
+         findDiameter(null)//right
+            diameter = 0
+            return 1 + Math.max(0,0)
+   findDiameter(3)//rightPath = 1
+      findDiameter(null)//left
+      findDiameter(null)//right
+         diameter = 0
+         return 1 + Math.max(0,0)
+   diameter = Math.max(diameter, leftPath + rightPath) = 3
+   return 1 + Math.max(2,1)
+```
+
+
+
+## Time Space Complexity
+
+Time: O(N) - Each node visited once
+
+Space- O(N) Size of call stack during DFS related to height of tree
