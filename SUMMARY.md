@@ -136,7 +136,7 @@
   * [Valid Parenthesis](arrays/strings/valid-parenthesis.md)
   * [Page 2](arrays/strings/page-2.md)
 * [Matrix](arrays/matrix/README.md)
-  * [Page 5](arrays/matrix/page-5.md)
+  * [Number of Islands](arrays/matrix/number-of-islands.md)
   * [Island Perimeter](arrays/matrix/island-perimeter.md)
   * [Search a 2D matrix](arrays/matrix/search-a-2d-matrix.md)
   * [Valid Sudoku](arrays/matrix/valid-sudoku.md)
