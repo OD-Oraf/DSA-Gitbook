@@ -8,7 +8,7 @@
   * When we check left subtreee, update right boundary to parent node since no child nodes should exceed that value
   * When we check the right subtreee, update left boundary to the parent node since no child nodes should be less than that value
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ```java
 /**

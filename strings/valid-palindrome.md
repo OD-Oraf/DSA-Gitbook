@@ -9,6 +9,17 @@
 
 
 
+### Important
+
+* Check variable names, left/right VS p1/p2 VS start/end
+
+```java
+Character.toLowerCase()
+Characer.isLetterOrDigit()
+```
+
+
+
 ```java
 class Solution {
     public boolean isPalindrome(String s) {
@@ -28,11 +39,13 @@ class Solution {
         while (p1 < p2) {
             char start = Character.toLowerCase(s.charAt(p1));
             char end = Character.toLowerCase(s.charAt(p2));
-            
+             
+            //skip invalid chracers from left
             if (!Character.isLetterOrDigit(start)) {
                 p1++;
                 continue;
             }
+            //skip invalid characters from right
             if (!Character.isLetterOrDigit(end)) {
                 p2--;
                 continue;

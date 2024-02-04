@@ -1,11 +1,15 @@
 # Linked List Cycle
 
-## Strategy&#x20;
+## Strategy - Slow fast pointers&#x20;
 
 * Use slow/fast pointer
   * slow = slow.next
   * fast = fast.next.next
-* stop when fast pointer or fast.next reaches the end
+* stop when fast pointer or fast.next evaluates as null
+  * **Important!** Why do we need to check fast.next in while condition?
+    * 1 -> 2 -> 3 -> null
+    * if fast = 3 then  fast.next.next == null pointer exception because null.next &#x20;
+      * We check fast.next so we avoid null pointer&#x20;
 * If there is a cycle the fast pointer will catch up to the slow pointer.
 
 ```java
@@ -22,33 +26,45 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        
-        // Make sure first or second node point to another
-        if (head == null || head.next == null) {
+        // Use fast as slow pointers to catch cyclce
+        // Make sure to check fast.next to detect null from last element in list
+            
+        if (head == null) {
             return false;
         }
+        
         ListNode slow = head;
         ListNode fast = head;
         
-        // if either are eventually null then there is no cycle
         while (fast != null && fast.next != null) {
-            slow = slow.next;
+            slow = slow.next; 
             fast = fast.next.next;
             
             if (slow == fast) {
                 return true;
             }
+            
         }
         
-        return false; 
+        return false;
+        
     }
 }
 ```
 
+### Time complexity
+
+Time: No-cycle - O(n) - Number of nodes in the linked list
+
+Cycle O(N + K)
+
+* N - Noncyclce length
+* K Cycle length
+
 ### Alternate solution
 
 ```java
-// Some code/**
+/**
  * Definition for singly-linked list.
  * class ListNode {
  *     int val;
@@ -58,7 +74,7 @@ public class Solution {
  *         next = null;
  *     }
  * }
- */
+ **/
 public class Solution {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {

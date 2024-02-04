@@ -4,7 +4,7 @@
 
 * Find where slow and fast pointer meets
 * Use that node to find length of cycle
-* Use length of cycle to find start3
+* Use length of cycle to find start
 
 
 

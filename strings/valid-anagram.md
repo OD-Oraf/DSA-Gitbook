@@ -1,10 +1,10 @@
 # Valid Anagram
 
-### Strategy
+### Strategy - Character Count via HashMap
 
 * Check for empty strings and unequal string length between both
 * Store character counts in hashmap
-* Iterate through anagram nad subtract from hashmap
+* Iterate through anagram and subtract from hashmap
 
 ```java
 class Solution {
@@ -37,4 +37,35 @@ class Solution {
         
     }
 }
+```
+
+## Strategy - Sorting
+
+### Time Complexity&#x20;
+
+* O(n log n) - Sorting algorithm
+
+### Space Complexity
+
+* O(1) depending on sorting algorithm
+* O (n) - Java uses extra space for converting to char array
+
+```java
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        
+        char[] sArr = s.toCharArray();
+        char[] tArr = t.toCharArray();
+        
+        Arrays.sort(sArr);
+        Arrays.sort(tArr);
+        
+        return Arrays.equals(sArr, tArr);
+        
+    }
+}
+
 ```
