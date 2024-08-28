@@ -1,9 +1,9 @@
 # Time Complexity
 
-## Logrithm,ic Tim,e
+## Logarithmic Time
 
 * Assumption is log base 2 in computer sceince
-  * Same is log bas 10 in calculus
+  * Same is log base 10 in calculus
 * For a balanced binary tree the complexity would be log(n) because the nodes double at eacch point
 * Also binary sear when dividing the search space by 2 at every decision
 * Halving the search space

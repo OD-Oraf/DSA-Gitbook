@@ -2,7 +2,7 @@
 
 ### Strategy - Greedy
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
 ```java
 class Solution {

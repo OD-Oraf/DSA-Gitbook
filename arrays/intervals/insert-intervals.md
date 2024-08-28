@@ -1,10 +1,10 @@
 # Insert Intervals
 
-{% embed url="https://leetcode.com/problems/insert-interval/" %}
-
-## Strategy
+## Strategy - Insert via for loop
 
 * Insert interval while preserving order based on interval start
+* Compare intervals to figure out if there is no overlap
+  * If no overlap, figure out which interval comes first
 * Iterate through intervals and merge based on overlap
   * Overlap = true if min(endings) - max(startings) >= 0
   * New interval = {min(starting), max(ending)}
@@ -42,6 +42,46 @@ Step 2.6
 last index
 answer = [[1,2],[3,10],[12,16]]
 */
+```
+
+```java
+class Solution {
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        
+        List<int[]> result = new ArrayList<>();
+        
+        // Iterate through all slots
+        for(int[] interval : intervals)
+        {
+            
+            // if newInterval before slot insert newInterval & update slot as new interval
+            if(newInterval[1] < interval[0])
+            {
+                result.add(newInterval);
+                newInterval = interval;// new interval represents the unmerged interval
+            } 
+            
+            // if slot is lesser than new Interval insert slot
+            else if(interval[1] < newInterval[0])
+            {
+                result.add(interval);
+            } 
+            
+            // if above conditions fail its an overlap since possibility of new interval existing in left & right of slot is checked
+            // update lowest of start & highest of end & not insert
+            else {
+                newInterval[0] = Math.min(newInterval[0],interval[0]);
+                newInterval[1] = Math.max(newInterval[1],interval[1]);
+            }
+        }
+        
+        // insert the last newInterval -> possible that the interval is updated but not added to result
+        result.add(newInterval);
+        
+        // convert to int[][] array
+        return result.toArray(new int[result.size()][]);
+    }
+}
 ```
 
 ```java

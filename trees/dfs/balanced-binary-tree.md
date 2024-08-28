@@ -14,7 +14,7 @@ Each&#x20;
 
 ## Difficult parts explained
 
-Each sub tree should be treated as a subproblem
+Each sub tree should be treated as a sub-problem
 
 ```java
 return 1 + Math.max(height(root.left), height(root.right));
@@ -67,3 +67,35 @@ class Solution {
     }
 }
 ```
+
+<pre class="language-java"><code class="lang-java"><strong>// More intuitive for me 
+</strong><strong>class Solution {
+</strong>    public boolean isBalanced(TreeNode root) {
+        //Height balanced meaning no more than 1 level difference between left and right branches
+        if (root == null) {
+            return true;
+        }
+        
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+        
+        return (
+            Math.abs(leftHeight - rightHeight) &#x3C;= 1 &#x26;&#x26;
+            isBalanced(root.left) &#x26;&#x26;
+            isBalanced(root.right)
+           );
+        
+    }
+    
+    public int getHeight(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int left = getHeight(root.left);
+        int right = getHeight(root.right); 
+        
+        return 1 + Math.max(left, right);
+    }
+}
+</code></pre>

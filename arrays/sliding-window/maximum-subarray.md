@@ -4,6 +4,18 @@ description: Not really sliding window but it helps me think about the problem
 
 # Maximum Subarray
 
+## # Pre code thoughts
+
+* For each number 'x' inside the input array
+  * 2 Choices
+    * Add 'x' to the window sum
+    * Start a new window sum with 'x'
+  * When should we start a new running sum with 'x'?
+    * When our current window sum is a negative value -> start nw subarray
+    * This is because 'x + negative num'  only lowers x and the sum of the current window
+      * So we should just start a new subarray at 'x'&#x20;
+  * Return sum of contiguous subarray with highest sum
+
 ## Strategy
 
 * Kadanes algorithm
@@ -26,7 +38,9 @@ description: Not really sliding window but it helps me think about the problem
 
 ### Why set maxSum to Integer.MIN\_VALUE?
 
-There is the possibility that the array only has negative values. If so, then the max sum will end up being the smallest negative number since the window sum will be set to 0 on each iteration with all negative numbers
+There is the possibility that the array **only has negative values.** If so, then the max sum will end up being the smallest negative number since the window sum will be set to 0 on each iteration with all negative numbers
+
+## Strategy - Kadanes Algorithm
 
 ```java
 class Solution {
@@ -51,6 +65,55 @@ class Solution {
         }
         
         return maxSum;
+    }
+}
+```
+
+### Strategy - Dynamic Programming(Not space optimized)
+
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+        // Initialize our variables using the first element.
+        int currentSubarray = nums[0];
+        int maxSubarray = nums[0];
+        
+        // Start with the 2nd element since we already used the first one.
+        for (int i = 1; i < nums.length; i++) {
+            int num = nums[i];
+            // If current_subarray is negative, throw it away. Otherwise, keep adding to it.
+            currentSubarray = Math.max(num, currentSubarray + num);
+            maxSubarray = Math.max(maxSubarray, currentSubarray);
+        }
+        
+        return maxSubarray;
+    }
+}
+```
+
+## Strategy - Alternative DP
+
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        
+        int maxSum = Integer.MIN_VALUE;
+        int windowSum = 0;
+        
+        for (int i = 0; i < nums.length; i++) {
+            windowSum = windowSum + nums[i];
+            if (nums[i] > windowSum) {
+                windowSum = nums[i];
+            }
+            
+            maxSum = Math.max(maxSum, windowSum);
+        }
+        
+        return maxSum;
+        
     }
 }
 ```

@@ -21,7 +21,7 @@ class Solution {
         map.put('}', '{');
         map.put(']', '[');
         
-        for (int i = 0; i < s.length(); i++) {
+        for(int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             
             if (map.containsKey(c)) {

@@ -3,7 +3,7 @@
 ```java
 class Solution {
     public int characterReplacement(String s, int k) {
-        int[] arr = new int[26];//frequency map
+        int[] arr = new int[26]; //frequency map
         int ans = 0;
         int max = 0;
         int left = 0;

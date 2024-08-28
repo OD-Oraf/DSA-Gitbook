@@ -2,7 +2,7 @@
 
 ## Strategy - Monotonic Stack
 
-* Monotonic stack -> Stack with strictly increasing or decreasing values
+* Monotonic decreasing stack -> Stack with strictly increasing or decreasing values
   * Good for comparing size of numeric elements with order being relevant
 * To maintain stack&#x20;
   * Store indices of temperatures

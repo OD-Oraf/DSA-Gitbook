@@ -1,9 +1,12 @@
 # 3 Sum
 
-## Strategy
+## Strategy - Sort/Two pointers&#x20;
 
 * Sort array and for each unique number do binary search to find triplet
-* Remember to skip duplicates as we dont want duplicate sets of solutions+
+* Remember to skip duplicates as we dont want duplicate sets of solutions
+* Time Complexity ->Finding first number is O(n), finding complementary pair is O(n) sorting is O(nlogn)&#x20;
+  * Total time complexity is O(nlogn + n^2) -> n^2
+* Space -> O(logn)
 
 ```java
 class Solution {
