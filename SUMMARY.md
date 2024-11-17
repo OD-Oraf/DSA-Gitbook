@@ -48,7 +48,7 @@
 ## Sorting
 
 * [Selection Sort](sorting/selection-sort.md)
-* [Copy of Page 6](sorting/copy-of-page-6.md)
+* [Python Sorting](sorting/copy-of-page-6.md)
 
 ## Dynamic Programing/Greedy
 
@@ -233,8 +233,6 @@
 * [Backspace string compare](stack/backspace-string-compare.md)
 * [Min Stack](stack/min-stack.md)
 * [Daily Temperatures](stack/daily-temperatures.md)
-
-## Matix
 
 ## Bit-Manipulation\\
 
