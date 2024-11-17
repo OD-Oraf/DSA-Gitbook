@@ -6,6 +6,42 @@
 * Store character counts in hashmap
 * Iterate through anagram and subtract from hashmap
 
+#### Python
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        #Get character count using hashmap
+        if len(s) != len(t):
+            return False
+        #Create hashmap
+        hashmap = {}
+        
+        #Get hashmap character count
+        for char in s:
+            hashmap[char] = hashmap.get(char, 0) + 1
+
+        '''
+        Remove characters as we find them in t,
+        - If char not found in hashmap then reutrn false
+        '''
+        
+        for char in t:
+            if char in hashmap:
+                hashmap[char] = hashmap.get(char) - 1
+                if hashmap[char] == 0:
+                    hashmap.pop(char)
+            else:
+                return False
+
+        if len(hashmap) == 0:
+            return True
+            
+        
+```
+
+#### Java
+
 ```java
 class Solution {
     public boolean isAnagram(String s, String t) {

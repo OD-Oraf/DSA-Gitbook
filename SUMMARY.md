@@ -5,13 +5,14 @@
 ## Algorithms / Concepts
 
 * [Useful](algorithms-concepts/useful/README.md)
-  * [Useful Code Snippets](algorithms-concepts/useful/useful-code-snippets.md)
+  * [Useful Code Snippets(Java)](algorithms-concepts/useful/useful-code-snippets-java.md)
   * [Binary Search Template](algorithms-concepts/useful/binary-search-template.md)
   * [Usefull Knowledge](algorithms-concepts/useful/usefull-knowledge.md)
   * [Helpful links](algorithms-concepts/useful/helpful-links.md)
   * [Binary Search: l < r VS l <= r](algorithms-concepts/useful/binary-search-l-less-than-r-vs-l-less-than-r.md)
   * [Recursion vs iterative](algorithms-concepts/useful/recursion-vs-iterative.md)
   * [Tree Traversal Diagram](algorithms-concepts/useful/tree-traversal-diagram.md)
+  * [Page 3](algorithms-concepts/useful/page-3.md)
 * [Data Structures](algorithms-concepts/data-structures/README.md)
   * [Queue](algorithms-concepts/data-structures/queue.md)
   * [Arrays](algorithms-concepts/data-structures/arrays.md)

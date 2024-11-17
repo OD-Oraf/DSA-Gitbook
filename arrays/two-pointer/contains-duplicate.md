@@ -31,6 +31,27 @@ class Solution {
         
     }
 }
+
+
+```
+
+## # Strategy - Hashmap
+
+* Keep count of each character
+* If the character has a count over 2 then return True
+
+```python
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashmap = {}
+        
+        for num in nums:
+            if num in hashmap and hashmap[num] >= 1:
+                return True
+            
+            hashmap[num] = hashmap.get(num, 0) + 1     
+        return False
+        
 ```
 
 ## Strategy - (HashSet)
@@ -42,6 +63,25 @@ class Solution {
 
 * Time - O(n)
 * Space - O(n) Space used by a hash set is linear with number of elements
+
+#### Python
+
+```python
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+        
+        for num in nums:
+            if num in hashset:
+                return True
+            
+            hashset.add(num)
+            
+        return False
+        
+```
+
+#### Java
 
 ```java
 class Solution {

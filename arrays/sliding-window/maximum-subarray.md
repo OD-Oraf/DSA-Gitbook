@@ -16,7 +16,7 @@ description: Not really sliding window but it helps me think about the problem
       * So we should just start a new subarray at 'x'&#x20;
   * Return sum of contiguous subarray with highest sum
 
-## Strategy
+## Strategy - Kadanes Algorithm
 
 * Kadanes algorithm
   * Set up maxSum and windowSum
@@ -40,7 +40,7 @@ description: Not really sliding window but it helps me think about the problem
 
 There is the possibility that the array **only has negative values.** If so, then the max sum will end up being the smallest negative number since the window sum will be set to 0 on each iteration with all negative numbers
 
-## Strategy - Kadanes Algorithm
+## Strategy - Kadane's Algorithm
 
 ```java
 class Solution {

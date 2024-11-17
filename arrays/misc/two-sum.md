@@ -18,7 +18,24 @@ return new int[]{}
 * Parse array again and see if complement exists in array
   * Make sure if complement exists, it doesn't refer to the original number. Ex don't want same number doubled to equal target
 
+#### Python
 
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        
+        for i in range(0, len(nums)): 
+            hashmap[nums[i]] = i
+        
+        for i in range(0, len(nums)):
+            complement = target - nums[i]
+            if complement in hashmap and hashmap[complement] != i:
+                return [hashmap[complement], i]
+        
+```
+
+#### Java
 
 ```java
 class Solution {
