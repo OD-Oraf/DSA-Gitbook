@@ -4,7 +4,7 @@
 
 [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
 
-#### Important Java features
+### Important Java features
 
 ```
 map.containsKey()
@@ -18,7 +18,7 @@ return new int[]{}
 * Parse array again and see if complement exists in array
   * Make sure if complement exists, it doesn't refer to the original number. Ex don't want same number doubled to equal target
 
-#### Python
+### Python
 
 ```python
 class Solution:
@@ -35,7 +35,7 @@ class Solution:
         
 ```
 
-#### Java
+### Java
 
 ```java
 class Solution {
