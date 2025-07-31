@@ -1,10 +1,11 @@
-# Useful Code Snippets
+# Useful Code Snippets 
 
 ## String
 
-<pre class="language-java"><code class="lang-java">// Sort String as character array
-<strong>char[] chars = s2.toCharArray();
-</strong>Arrays.sort(chars);
+``` java
+// Sort String as character array
+char[] chars = s2.toCharArray();
+Arrays.sort(chars);
 //Create String from chararray
 String sorted = new String(chars);
 
@@ -15,7 +16,7 @@ c.equals("D") // true
 //Convert string representation of int to integer
 String c = "5"
 Integer.valueOf(c) // = 5
-</code></pre>
+```
 
 ## Character
 
