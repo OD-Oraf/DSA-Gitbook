@@ -4,13 +4,42 @@
 
 [https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/two-sum/)
 
-#### Important Java features
+## Important  methods
+### Java
 
-```
+``` java 
 map.containsKey()
 map.put()
 return new int[]{}
 ```
+### Python
+
+``` python
+nums.index(complement)
+for i, currNum in enumerate(nums):
+
+```
+
+### Python Approach
+```python
+class Solution:
+
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+	for i, currNum in enumerate(nums):
+		# Get each complement to check if its existing in the array
+		complement = target - currNum
+		
+		""" 
+		make sure that the currentt index and the complements index arent
+		matching so that the same number is used twice for the target
+		"""
+		if complement in nums and i != nums.index(complement):
+		return [i, nums.index(complement)]
+
+	# If no pair found then just reutrn [-1, -1]
+	return [-1, -1]
+```
+
 
 ## Strategy (2 pass Hashmap)
 

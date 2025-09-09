@@ -40,7 +40,8 @@ class Solution {
         
     }
 }
-
+```
+````
 Explanation
 
 root = [2,1,3]       
