@@ -48,7 +48,7 @@
 ## Sorting
 
 * [Selection Sort](sorting/selection-sort.md)
-* [Python Sorting](sorting/copy-of-page-6.md)
+* [Python Sorting](sorting/python-sort.md)
 
 ## Dynamic Programing/Greedy
 
